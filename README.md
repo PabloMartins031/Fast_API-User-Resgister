@@ -1,116 +1,174 @@
-📘 Descrição Completa do Projeto — FastAPI User Register API
+# 🚀 FastAPI User Register API
 
-Este projeto é uma API RESTful desenvolvida em FastAPI com o objetivo de realizar operações de CRUD (Create, Read, Update, Delete) para gerenciamento de usuários.
-Simples, rápida e totalmente didática — ideal para estudos, testes e primeiros passos no backend com Python.
+API RESTful desenvolvida com **FastAPI** para gerenciamento de usuários (CRUD completo).
+Projeto simples, rápido e didático — ideal para estudos e primeiros passos no backend com Python.
 
-A API funciona 100% em memória, sem banco de dados, mas sua estrutura foi preparada para expansão futura, permitindo facilmente adicionar SQLite, PostgreSQL ou qualquer outro banco.
+---
 
-🎯 Objetivo do Projeto
+## 📘 Descrição
 
-O principal objetivo deste projeto é servir como uma base sólida para estudos, permitindo que o usuário aprenda:
+Esta API permite criar, listar, atualizar e deletar usuários.
+Os dados são armazenados **em memória**, sem banco de dados, mas com estrutura preparada para evolução futura.
 
-Estrutura fundamental de um projeto FastAPI
+---
 
-Criação de rotas e métodos HTTP
+## 🎯 Objetivo
 
-Uso de modelos (Pydantic Models)
+Este projeto foi criado para ajudar no aprendizado de:
 
-Validação de dados automaticamente
+* Estrutura de uma API com FastAPI
+* Criação de rotas e métodos HTTP
+* Uso de **Pydantic Models**
+* Validação automática de dados
+* Organização limpa e escalável
 
-Organização limpa e extensível para APIs reais
+---
 
-É um ponto de partida excelente para quem deseja evoluir para APIs maiores.
+## 🧱 Arquitetura do Projeto
 
-🧱 Arquitetura do Projeto
-1️⃣ Modelos (Pydantic Models)
+### 1️⃣ Modelos (Pydantic)
 
-Responsáveis pela definição da estrutura dos dados dos usuários, incluindo:
+Responsáveis pela estrutura dos dados:
 
-Nome
+* Nome
+* Idade
+* CPF
+* Email
 
-Idade
+---
 
-CPF
+### 2️⃣ Endpoints (CRUD)
 
-Email
+| Método | Rota       | Descrição               |
+| ------ | ---------- | ----------------------- |
+| GET    | /User      | Lista todos os usuários |
+| POST   | /User      | Cria um novo usuário    |
+| GET    | /User/{id} | Busca usuário por ID    |
+| PUT    | /User/{id} | Atualiza um usuário     |
+| DELETE | /User/{id} | Remove um usuário       |
 
-O FastAPI usa esses modelos para validar automaticamente tudo o que entra e sai da API.
+---
 
-2️⃣ Rotas da API (Endpoints)
+### 3️⃣ Armazenamento
 
-A aplicação oferece endpoints completos para CRUD:
+* ✔ Lista Python (em memória)
+* ❌ Banco de dados (não implementado)
 
-Método	Rota	Descrição
-GET	/User	Lista todos os usuários
-POST	/User	Cria um novo usuário
-GET	/User/{id}	Busca usuário específico
-PUT	/User/{id}	Atualiza usuário existente
-DELETE	/User/{id}	Deleta um usuário
-3️⃣ Armazenamento
+---
 
-Os dados são armazenados em:
+## 🛠️ Tecnologias Utilizadas
 
-✔ Uma lista Python
-❌ Banco de dados (não implementado)
+* Python 3.10+
+* FastAPI
+* Uvicorn
+* Pydantic
 
-Esse formato é perfeito para estudo e facilita entender o funcionamento interno das operações.
+---
 
-🛠️ Tecnologias Utilizadas
+## 📌 Funcionalidades
 
-Python 3.10+
+* ✔ Criar usuários
+* ✔ Validação automática de dados
+* ✔ Listar usuários
+* ✔ Buscar por ID
+* ✔ Atualizar dados
+* ✔ Deletar usuário
+* ✔ Documentação automática (Swagger e ReDoc)
 
-FastAPI — Framework rápido e moderno
+---
 
-Uvicorn — Servidor ASGI
+## 🚀 Como Rodar o Projeto
 
-Pydantic — Validação de dados
+### 🔹 1. Clone o repositório
 
-📌 Funcionalidades Implementadas
+```bash
+git clone <url-do-repositorio>
+cd Fast_API-User-Register
+```
 
-✔ Criar usuários
-✔ Validar automaticamente os dados enviados
-✔ Listar todos os usuários
-✔ Buscar usuário por ID
-✔ Atualizar dados
-✔ Deletar usuário
-✔ Documentação automática via Swagger
-✔ Código limpo, simples e educativo
+---
 
-🔮 Melhorias Futuras (Roadmap)
+### 🔹 2. (Opcional, recomendado) Criar ambiente virtual
 
-O projeto está preparado para receber:
+```bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
 
-Persistência com banco de dados (SQLite / PostgreSQL / etc.)
+---
 
-Autenticação JWT
+### 🔹 3. Instalar dependências
 
-Divisão por camadas (routers, services, models)
+```bash
+pip install -r requirements.txt
+```
 
-Testes automatizados
+Ou manualmente:
 
-Containerização com Docker
-
-CI/CD
-
-Frontend simples utilizando a API
-
-🚀 Como Rodar o Projeto
+```bash
 pip install fastapi uvicorn
+```
+
+---
+
+### 🔹 4. Rodar a API
+
+```bash
 uvicorn main:app --reload
+```
 
-📄 Documentação automática:
+---
 
-Swagger UI: http://127.0.0.1:8000/docs
+## 📄 Documentação automática
 
-ReDoc: http://127.0.0.1:8000/redoc
+Após rodar o projeto:
 
-📂 Estrutura do Projeto
+* Swagger UI → http://127.0.0.1:8000/docs
+* ReDoc → http://127.0.0.1:8000/redoc
+
+---
+
+## 📦 Gerando o requirements.txt
+
+Caso queira gerar ou atualizar as dependências do projeto:
+
+```bash
+pip freeze > requirements.txt
+```
+
+---
+
+## 🔮 Melhorias Futuras
+
+* Banco de dados (SQLite / PostgreSQL)
+* Autenticação JWT
+* Arquitetura em camadas (routers, services, models)
+* Testes automatizados
+* Docker
+* CI/CD
+* Frontend consumindo a API
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
 Fast_API-User-Register/
 │── main.py
+│── requirements.txt
 │── README.md
 │── .gitignore
+```
 
-👤 Autor
+---
 
-Projeto criado com dedicação por Pablo Martins.
-Este repositório é aberto para sugestões, melhorias e contribuições.
+## 👤 Autor
+
+Desenvolvido por **Pablo Martins**
+
+---
+
+## 🤝 Contribuição
+
+Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
+
